@@ -1,7 +1,5 @@
-# Wp rest api endpoint model
-Endpoint model for wp rest api requests
+<?php
 
-```
 /**
  * Configure REST API Endpoint
  *
@@ -22,7 +20,9 @@ add_action('rest_api_init', function () {
     ));
 });
 
-function rest_get_data(WP_REST_Request $request) {
+function rest_get_data(WP_REST_Request $request)
+{
+
     // Fields
     $nonce = $request->get_param("nonce");
 
@@ -51,5 +51,3 @@ function rest_get_data(WP_REST_Request $request) {
 
     return new WP_REST_Response($response, 200);
 }
-
-```
